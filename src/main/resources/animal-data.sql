@@ -1,4 +1,4 @@
-insert into `animal_db` 
-(`species`, `colouring`, `lifeSpan`,`depthFound`)
+insert into `animal` 
+(`species`, `colouring`, `life_span`,`depth_found`)
 values 
-('Sea Turtle', 'Green', 50, 2900), ('Killer whale', 'Black&White', 60, 850);
+('Dolphin', 'blue', 60, 2800), ('Killer whale', 'Black&White', 60, 850);
