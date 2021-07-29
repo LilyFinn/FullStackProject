@@ -63,7 +63,7 @@ public class AnimalControllerIntegrationTest {
 
 		this.mockMVC.perform(request).andExpect(checkStatus).andExpect(checkBody);
 	}
-	
+
 	@Test
 
 	void testDelete() throws Exception {
@@ -74,10 +74,7 @@ public class AnimalControllerIntegrationTest {
 
 		this.mockMVC.perform(request).andExpect(checkStatus).andExpect(checkBody);
 	}
-	
-	
-	
-	
+
 	@Test
 
 	void testGetAll() throws Exception {
@@ -97,12 +94,9 @@ public class AnimalControllerIntegrationTest {
 
 		this.mockMVC.perform(request).andExpect(checkStatus).andExpect(checkBody);
 
-	} 
-	
-	
-	
-	
-	 @Test
+	}
+
+	@Test
 	void testGetAnimal() throws Exception {
 
 		Animal testAn = new Animal(1, "Dolphin", "blue", 60, 2800);
@@ -114,10 +108,9 @@ public class AnimalControllerIntegrationTest {
 		ResultMatcher checkBody = content().string(testAnAsJSON);
 
 		this.mockMVC.perform(request).andExpect(checkStatus).andExpect(checkBody);
-	} 
-	
-	
-	 @Test
+	}
+
+	@Test
 	void testGetBySpecies() throws Exception {
 
 		List<Animal> findAn = new ArrayList<>();
@@ -134,27 +127,22 @@ public class AnimalControllerIntegrationTest {
 
 		this.mockMVC.perform(request).andExpect(checkStatus).andExpect(checkBody);
 
-	} 
-	 
-		@Test
-		void testUpdate() throws Exception {
-			int id = 1;
-			Animal newAnimal = new Animal(id, "Oyster", "black", 60, 2800);
-			String newAnimalAsJSON = this.mapper.writeValueAsString(newAnimal);
+	}
 
-			RequestBuilder req = put("/replaceAnimal/" + id).contentType(MediaType.APPLICATION_JSON)
-					.content(newAnimalAsJSON);
+	@Test
+	void testUpdate() throws Exception {
+		int id = 1;
+		Animal newAnimal = new Animal(id, "Oyster", "black", 60, 2800);
+		String newAnimalAsJSON = this.mapper.writeValueAsString(newAnimal);
 
-			
-			ResultMatcher checkStatus = status().is(200);
+		RequestBuilder req = put("/replaceAnimal/" + id).contentType(MediaType.APPLICATION_JSON)
+				.content(newAnimalAsJSON);
 
-			ResultMatcher checkBody = content().json(newAnimalAsJSON);
+		ResultMatcher checkStatus = status().is(200);
 
-			this.mockMVC.perform(req).andExpect(checkStatus).andExpect(checkBody);
-		}
-	
+		ResultMatcher checkBody = content().json(newAnimalAsJSON);
 
-
-	
+		this.mockMVC.perform(req).andExpect(checkStatus).andExpect(checkBody);
+	}
 
 }
