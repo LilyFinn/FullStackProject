@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"
+        integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="/seaAnimals.CSS">
+
+    <style>
+
+        body {
+            margin: 30px
+        }
+        .my-container {
+       border: 1px solid darkblue
+        }
+
+        .my-row {
+            border: 0.5px solid darkblue
+        }
+
+        .my-col {
+            border: 3px cornflowerblue
+    
+        }
+    </style>
+
+    <title>seaAnimals</title>
+</head>
+
+<body>
+
+
+    <div class="container my-container">
+        <div class="row justify-content-center align-items-center my-row">
+            <div class="col my-col">
+
+                <h1>SEA LIFE</h1>
+                <p> The aim of this Database is for users to be able to add sightings of animals living in the sea.</p>
+                <p>This helps discover new species! </p>
+                </div>
+
+                <div class="row justify-content-end-between my-row"></div>
+                <div class="col my-col">
+                    <h5> Find Sea Animal By Its ID</h5>
+                    
+                    <section>
+                        <section id="getByIDSection">
+                            <label for="animalID">ID</label>
+                            <input id="animalID" type="number">
+                            <button onclick="getAnimalById();">GET</button>
+                        </section> 
+                </div>
+
+                <div class="row justify-content-end-between align-items-center my-row"></div>
+                <div class="col my-col">
+
+                    <h5>Would you like to add a new Sea Animal to the DataBase?</h5>
+                    <section id="postSection">
+                        <h2> </h2>
+                        <form>
+                            <label for="animalSpecies">Species: </label>
+                            <input type="text" id="animalSpecies" name="species" required>
+                            <br>
+                            <label for="animalColouring">Colour: </label>
+                            <input type="text" id="animalColouring" name="colouring" required>
+                            <br>
+                            <label for="animalLifeSpan">LifeSpan: </label>
+                            <input type="number" id="animalLifeSpan" name="lifeSpan" required min="1" max="500">
+                            <br>
+                            <label for="animalDepthFound">DepthFound: </label>
+                            <input type="number" id="animalDepthFound" name="depthFound" required min="1" max="36000">
+                            <br>
+                            <button type="submit">Submit</button>
+                            <button type="reset">Reset</button>
+                            
+                        </form>
+
+
+
+
+                        <div class="row justify-content-center-between  my-row"></div>
+                        <div class="col my-col">
+                        <h5>Create An Animal To See The List Of All Logged Sea Animals: </h5>
+                        <section id="getAllSection"> </section>
+                    </section>
+                </div>
+                  </section>
+
+
+
+                    
+                    <section id="updateSection">
+
+                        <div class="row justify-content-center-between my-row"></div>
+                    <div class="col my-col">
+
+                        <h5> Update Animals Information</h5>
+                        <form id="formSection">
+                            <label for="newAnimalid">Animal ID: </label>
+                            <input type="number" id="newAnimalID" name="id" required>
+                            <br>
+                            <label for="newAnimalSpecies">Species: </label>
+                            <input type="text" id="newAnimalSpecies" name="species" required>
+                            <br>
+                            <label for="newAnimalColouring">Colour: </label>
+                            <input type="text" id="newAnimalColouring" name="colouring" required>
+                            <br>
+                            <label for="newAnimalLifeSpan">LifeSpan: </label>
+                            <input type="number" id="newAnimalLifeSpan" name="lifeSpan" required min="1" max="500">
+                            <br>
+                            <label for="newAnimalDepthFound">DepthFound: </label>
+                            <input type="number" id="newAnimalDepthFound" name="depthFound" required min="1"
+                                max="36000">
+                            <br>
+                            <button type="submit">Submit</button>
+                            <button type="reset">Reset</button>
+                        </form>
+                    </section>
+
+                </div>
+            
+            </main>
+
+            <script src="/seaAnimals.JS"></script>
+</body>
+</html>
