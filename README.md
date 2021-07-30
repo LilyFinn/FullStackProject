@@ -26,8 +26,6 @@ I used Epics to add structure, and then created user stories to create a clear p
 DataBases (SQL). 
 
 I used two databases for this project. I used a h2 Console because data doesn't persist, my SQL is perminatly stored so it is accessible at every point.
-Using a Spring framework, generating and writing the API was straight forward, taking care to follow SOLID principles, such as ensuring variables are private and accessing them though public getters and setters. I ended up implementing a get song by id method, dispite not needing it in the end, on the chance that I would require it later on in the Javascript.
-
 
 
 
